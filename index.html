@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Элитный парфюм!</title>
+    <!--Meta tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--SEO-->
+    <meta name="description" content="empty">
+    <meta name="keywords" content="empty">
+
+    <!--Веб-апп на весь экран мобильного браузера-->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!--Веб-апп на весь экран мобильного браузера END-->
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+
+    <!--Плитки для рабочего стола WP-->
+    <meta name="application-name" content="ElaSlim" />
+    <meta name="msapplication-TileColor" content="#FA959D" />
+    <meta name="msapplication-square70x70logo" content="images/favicon.png" />
+    <meta name="msapplication-square150x150logo" content="images/fav-elaslim-32x32.png" />
+    <meta name="msapplication-wide310x150logo" content="images/fav-elaslim-72x72.png" />
+    <meta name="msapplication-square310x310logo" content="images/fav-elaslim-114x114.png" />
+    <!--Плитки для рабочего стола WP END-->
+    <!--Meta tags END-->
+
+    <meta name="theme-color" content="#FA959D">
+
+    <!--Other links-->
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!--Иконка для рабочего стола в iOS и Android-->
+    <link rel="apple-touch-icon icon" href="images/favicon.png">
+    <link rel="apple-touch-icon icon" sizes="32x32" href="images/fav-parfume-32x32.png">
+    <link rel="apple-touch-icon icon" sizes="72x72" href="images/fav-parfume-72x72.png">
+    <link rel="apple-touch-icon icon" sizes="114x114" href="images/fav-parfume-114x114.png">
+    <!--Иконка для рабочего стола в iOS и Android END-->
+
+    <!--Иконка загрузки сайта с рабочего стола для iOS и Android-->
+    <link rel="apple-touch-startup-image" href="images/fav-parfume-32x32.png">
+    <!--Иконка загрузки сайта с рабочего стола для iOS и Android END-->
+    
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&amp;subset=cyrillic,greek-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--Fonts END-->
+
+    <!--Styles-->
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="styles/main.css?v=3">
+    <!--Styles END-->
+
+    <!--Scripts top-->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.sticky.js"></script>
+    <script type="text/javascript" src="bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="bower_components/html5shiv/dist/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <!--Scripts top END-->
+</head>
+    <body>
+        <aside class="feedback pop-up">
+            <div class="inner">
+                <a href="#" class="close-button"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+                <h4>Введите контактные данные ниже, и наши менеджеры<br>Вам перезвонят. Спасибо!</h4>
+                <form>
+                    <input type="text" name="name" placeholder="Введите имя" onkeyup="this.value = this.value.replace (/[^a-zA-Zа-яА-ЯёЁ]/i, '')">
+                    <input type="tel" class="input-phone" data-inputmask="'mask': '99-9999999'" name="phone" placeholder="+375(__)___-__-__">
+                    <input type="submit" value="Отправить">
+                </form>
+            </div>
+        </aside>
+        <aside class="order pop-up">
+            <div class="inner">
+                <a href="#" class="close-button"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+                <h4>Это все, что Вы хотели?</h4>
+                <p>Тогда нажмите <span class="marked">Заказать</span></p>
+                <h5>Список ваших товаров</h5>
+                <ul class="item-list" id='card-products'>
+                    
+                </ul>
+                <div class="total-price">
+                    <div class="prices">
+                        <p>Стоимость без скидки: <span class="without-discount">562 руб</span></p>
+                        <p>Стоимость со скидкой: <span class="with-discount">320 руб</span></p>
+                    </div>
+                    <div class="saved">
+                        <p>Вы сэкономили <span class="count-saved">247 рублей</span></p>
+                    </div>
+                </div>
+                <a href="#" class="get-info">Заказать</a>
+            </div>
+        </aside>
+        <header id="main">
+            <div class="header-top">
+                <ul class="container">
+                    <li class="col-lg-2 col-md-2 col-sm-3 hidden-xs"><a href="mailto:byleadsby@gmail.com">byleadsby@gmail.com</a></li>
+                    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-6"><a href="tel:+375447310404">+375-44-7310404 (Velcom)</a></li>
+                    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-6"><a href="tel:+375257310404">+375-25-7310404 (life)</a></li>
+                    <li class="col-lg-offset-2 col-lg-3 col-md-4 col-sm-3 hidden-xs help-button"><a href="#" class="get-info flat">Получить консультацию по парфюму</a></li>
+                </ul>
+            </div>
+            <div class="header-bottom">
+                <ul class="container">
+                    <li class="nav-button hidden-lg hidden-md col-sm-1 col-xs-2"><i class="fa fa-bars" aria-hidden="true"></i></li>
+                    <li class="logo-container col-lg-1 col-md-1 col-sm-2 hidden-xs">
+                        <a href="./" class="clearfix">
+                            <span class="logo-left-side">GS</span>
+                            <span class="logo-right-side">good<br>sale</span>
+                        </a>
+                    </li>
+                    <li class="nav-container col-lg-offset-1 col-lg-5 col-md-offset-1 col-md-5">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#main" class="active">Главная</a>
+                                </li>
+                                <li>
+                                    <a href="#catalog">Каталог</a>
+                                </li>
+                                <li>
+                                    <a href="#advantages">Преимущества</a>
+                                </li>
+                                <li>
+                                    <a href="#contacts">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="order-container col-lg-offset-2 col-lg-3 col-md-offset-1 col-md-3 col-sm-offset-3 col-sm-6 col-xs-offset-0 col-xs-10 container-fluid">
+                        <div class="cart-container col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <a href="#" class="cart-count-container">
+                                <img src="images/cart.png" alt="cart">
+                                <span id="counter">0</span>
+                            </a>
+                            <div class="cart-info-container">
+                                <div class="price">
+                                    <div class="all-price">
+                                        0 р. 0 к.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0)" class="order-button col-lg-5 col-lg-offset-1 col-md-5 col-sm-offset-1 col-sm-5 col-xs-offset-0 col-xs-6" onclick="$('.order.pop-up').addClass('active')">Заказать</a>
+                    </li>
+                </ul>
+            </div>
+            <aside class="slide-bar">
+                <div class="discount-info-block">
+                    <h1 class="marked">Только до 1 Января!</h1>
+                    <p>
+                        Первая покупка добавлят <span class="marked">10% скидки</span> на весь ассортимент!
+                    </p>
+                    <p>
+                        Каждая следующая покупка <span class="marked">дарит 2 рубля</span>
+                    </p>
+                    <p>При покупке 3-ёх флаконов-доставка <span class="marked">бесплатно</span></p>
+                    <a href="#" class="get-info white">Получить консультацию</a>
+                </div>
+                <div class="first slide"></div>
+                <div class="second slide"></div>
+                <div class="third slide"></div>
+            </aside>
+        </header>
+        <main>
+            <section class="catalog" id="catalog">
+                <h2>Покупайте у нас парфюмерию и участвуйте в розыгрыше iPhone 6!</h2>
+                <p class="description">
+                    Важен не процент скидки, а конечная сумма. При покупке 6 флаконов - 7 идет бесплатно + возможнотсь выиграть iPhone 6!
+                </p>
+                <ul class="filter">
+                    <li class="filter-description active" id="all-products">
+                        <p>
+                            <span>ВЕСЬ</span> ПАРФЮМ
+                        </p>
+                        <em>БОЛЬШЕ 440 МАРОК</em>
+                    </li>
+                    <li class="filter-description" id="for-women">
+                        <p>
+                            ПАРФЮМ ДЛЯ <span>ЖЕНЩИН</span>
+                        </p>
+                        <em>БОЛЬШЕ 240 МАРОК</em>
+                    </li>
+                    <li class="filter-description" id="for-men">
+                        <p>
+                            ПАРФЮМ ДЛЯ <span>МУЖЧИН</span>
+                        </p>
+                        <em>БОЛЬШЕ 200 МАРОК</em>
+                    </li>
+                </ul>
+                <ul class="catalog-items">
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="10" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="11" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="12" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="13" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="14" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="15" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="16" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="17" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="18" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="19" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="19" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="item">
+                        <div class="info">
+                            <div class="front">
+                                <img src="images/parfum-bottle.png" alt="parfum">
+                                <div class="description">
+                                    <h3>Christian Dior</h3>
+                                    <p>
+                                        Miss Dior Cherie 100 ml edp
+                                    </p>
+                                    <span class="price">31 руб. 90 коп.</span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <h4>
+                                    Описание
+                                </h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum interdum diam, in iaculis libero dapibus a.
+                                    Pellentesque purus nulla, tincidunt ac est a, porttitor scelerisque ipsum.
+                                    Donec auctor velit eget justo bibendum, quis tincidunt nisl malesuada.
+                                    Integer faucibus quam nisl, tristique condimentum orci interdum non.
+                                    Mauris posuere purus a dolor rhoncus auctor sit amet ut quam.
+                                    Morbi luctus, ex et porttitor pretium, nisi ante lacinia erat, eget cursus est metus nec sem.
+                                    Vivamus vitae dolor auctor, ultrices libero vel, euismod lectus.
+                                    Suspendisse posuere, dolor nec lacinia dictum, ipsum odio laoreet ipsum, iaculis tincidunt lectus mauris eu sem.
+                                    Maecenas luctus sem velit, quis eleifend massa eleifend eget.
+                                    Donec ultrices felis metus, sit amet eleifend ligula aliquet id.
+                                    Nulla interdum aliquet ex vel tincidunt. Cras luctus dignissim erat.
+                                </p>
+                            </div>
+                        </div>
+                        <a class="to-order" data-product="20" href="#">Положить в корзину</a>
+                        <a class="to-search" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+                <a class="more-button" href="#">Увидеть больше</a>
+            </section>
+            <section class="advantages" id="advantages">
+                <h2>Почему стоит заказать наш парфюм?</h2>
+                <p class="description">
+                    Во время опроса мы получили 100% положительных отзывов.
+                    Ниже Вы сможете прочесть слова благодарности наших клиентов
+                </p>
+                <ul class="advantages-list container clearfix">
+                    <li class="advantage col-lg-3 col-md-3 col-sm-6">
+                        <img src="images/advantages-money-pack.png" alt="money-pack"><br>
+                        <span>Низкая цена</span>
+                        <p>Вы экономите свыше 70% при том же качестве продукции;</p>
+                    </li>
+                    <li class="advantage col-lg-3 col-md-3 col-sm-6">
+                        <img src="images/advantages-awards.png" alt="advantages-avards"><br>
+                        <span>Европейское качество</span>
+                        <p>Покупая у нас, Вы получаете парфюм европейского качества;</p>
+                    </li>
+                    <li class="advantage col-lg-3 col-md-3 col-sm-6">
+                        <img src="images/advantages-delivery.png" alt="advantages-delivery"><br>
+                        <span>Доставка в любую точку РБ</span>
+                        <p>Доставка по всей Беларуси 2-3 дня, почтой или курьером;</p>
+                    </li>
+                    <li class="advantage col-lg-3 col-md-3 col-sm-6">
+                        <img src="images/advantages-payment.png" alt="advantages-payment"><br>
+                        <span>Оплата при получении</span>
+                        <p>Вы платите только при получении, курьеру или на почте;</p>
+                    </li>
+                </ul>
+                <aside class="reviews container-fluid">
+                    <article class="review container-fluid">
+                        <div class="author-photo col-lg-6 col-md-6">
+                            <img src="images/first-review-img.jpg" alt="author">
+                        </div>
+                        <div class="reviews-content col-lg-6 col-md-6 col-sm-12">
+                            <h2>Отзывы наших покупателей</h2>
+                            <p>
+                                Спасибо Вам за Givenchy Ange ou Demon! Радует цена, быстрая доставка и стойкость аромата! Настолько соблазнительный и яркий аромат с цветочными и сладковатыми
+                                нотами, что влюбляет многновенно - даже муж оценил. Легкий, но очень запоминающийся, не простой. Его многогранность раскрывается со временем разными оттенками.
+                                У каждой девушки должно быть много ароматов под настроение и этот однозначно займет достойное место в моей коллекции.
+                            </p>
+                            <span class="author" rel="author">Кравченко Анастасия</span>
+                        </div>
+                    </article>
+                    <article class="review container-fluid">
+                        <div class="author-photo col-lg-6 col-md-6">
+                            <img src="images/second-review-img.jpg" alt="author">
+                        </div>
+                        <div class="reviews-content col-lg-6 col-md-6 col-sm-12">
+                            <h2>Отзывы наших покупателей</h2>
+                            <p>
+                                Парфюм Black Opium появился в моей коллекции не так давно, парфюм приобретала в магазине GoodSale. Этот пряный восточный аромат пленил меня с первого взгляда, с первого вздоха. Все, начиная от упаковки, до базовых нот - шикарное, дерзкое и интригующее.
+                                Внешний вид подстать самому аромату и упаковке. Гламур, шик и много переливающихся шершавых блесток. Имеется прозрачное окошечко, за которым можно разглядеть цвет и количество парфюма. Покупкой полностью довольна!
+                            </p>
+                            <span class="author" rel="author">Цветкова Ольга</span>
+                        </div>
+                    </article>
+                    <article class="review container-fluid">
+                        <div class="author-photo col-lg-6 col-md-6">
+                            <img src="images/third-review-img.jpg" alt="author">
+                        </div>
+                        <div class="reviews-content col-lg-6 col-md-6 col-sm-12">
+                            <h2>Отзывы наших покупателей</h2>
+                            <p>
+                                Подарили мне на 23 февраля Туалетную воду CHRISTIAN-DIOR-SAUVAGE.
+                                По началу был не привычен аромат, но долго мне не пришлось к нему привыкать. Очень нежный, слабый, приятный на запах, немного с горчинкой.
+                                Так что в мой список еще вписывается Туалетная вода CHRISTIAN-DIOR-SAUVAGE. Флакона примерно хватило мне на пол года. Буквально вот недавно закончились.
+                                Кто предпочитает не резкие запахи - это то, что вам нужно! Спасибо за Cristian dior sauvage.
+                            </p>
+                            <span class="author" rel="author">Макаренко Сергей</span>
+                        </div>
+                    </article>
+                </aside>
+            </section>
+        </main>
+        <footer id="contacts">
+            <ul class="contacts container-fluid">
+                <li class="about col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <a href="./" class="logo-container clearfix">
+                        <div class="logo-left-side">GS</div>
+                        <div class="logo-right-side">good<br>sale</div>
+                    </a>
+                    <p>
+                        Соберите все бонусы! Покупайте у нас парфюмерию со скидкой свыше 70% и выиграйте iPhone 6.
+                        Доставка по всей Беларуси 2-3 дня, почтой или курьером. По г.Минску - доставка в день заказа.
+                    </p>
+                </li>
+                <li class="address col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div>
+                        <h4>Адрес:</h4>
+                        <p>220055 г. Минск, ул. Чичурина 24</p>
+                    </div>
+                    <div>
+                        <h4>Контакты:</h4>
+                        <p>velcom : <a href="tel:+375447310404">+375-44-7310404</a></p>
+                        <p>life:) : <a href="tel:+375257310404">+375-25-7310404</a></p>
+                    </div>
+                    <div>
+                        <h4>E-mail:</h4>
+                        <p><a href="mailto:byleadsby@gmail.com">Byleadsby@gmail.com</a></p>
+                    </div>
+                </li>
+                <li class="bestsellers col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <h4 class="marked">Лидеры продаж</h4>
+                    <p>
+                        <a href="#"><strong>Christian Dior</strong> Miss Dior Cherie</a>
+                    </p>
+                    <p>
+                        <a href="#"><strong>GuerlainLa Petite</strong> Robe Noire</a>
+                    </p>
+                    <p>
+                        <a href="#"><strong>Dolce&Gabbana</strong> The One for Women</a>
+                    </p>
+                    <p>
+                        <a href="#"><strong>Chanel</strong> Coco Mademoiselle</a>
+                    </p>
+                    <p>
+                        <a href="#"><strong>Lancome</strong> LA VIE EST BELLE</a>
+                    </p>
+                </li>
+                <li class="feedback col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <p><strong>Мы всегда рады ответить на все Ваши вопросы!</strong></p>
+                    <form id="feedback-form">
+                        <input type="text" name="name" placeholder="Ваше имя" onkeyup="this.value = this.value.replace (/[^a-zA-Zа-яА-ЯёЁ]/i, '')">
+                        <input type="tel" class="input-phone" data-inputmask="'mask': '99-9999999'" name="phone-number" placeholder="+375(25)111-22-33">
+                        <input type="submit" name="submit" value="Получить консультацию">
+                    </form>
+                </li>
+            </ul>
+        </footer>
+        <script>
+
+            $('.slide-bar').slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                speed: 700,
+                slide: '.slide'
+            });
+
+
+            $('.reviews').slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                arrows: false,
+                autoplaySpeed: 3000,
+                speed: 700,
+                slide: '.review',
+                fade: true,
+                cssEase: 'linear'
+            });
+
+        </script>
+    </body>
+</html>
